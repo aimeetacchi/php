@@ -16,8 +16,13 @@
 <body>
 	<header>
 		<h1>Laracasts - php-for-beginners</h1>
+		<h2>
+			<!-- ?= this is the same as using ?php echo  and htmlspecialchars function stops script injection -->
+			<?= "Hello, " . htmlspecialchars($_GET['name']); ?>
+		</h2>
 	</header>
 
+	<h2>Animals</h2>
 	<!-- Loop through ARRAY ANIMALS -->
 	<ul>
 		<?php foreach($animals as $animal) : ?>
@@ -30,7 +35,7 @@
 			} 
 		?> -->
 	</ul>
-
+	<h2>Person</h2>
 	<!-- LOOP through Associative Array PERSON -->
 	<ul>
 		<?php foreach($person as $feature => $val) : ?>
@@ -38,12 +43,31 @@
 		<?php endforeach; ?>
 	</ul>
 
-
+	<h2>Task for the day</h2>
 	<!-- LOOP THROUGH Associative ARRAY TASK -->
 	<ul>
-		<?php foreach($task as $feature => $val) : ?>
-		<li><strong><?= $feature ?>: </strong><?= $val ?></li>
-		<?php endforeach; ?>
+		<li>
+			<strong>Name: </strong><?= $task['title']; ?>
+		</li>
+
+		<li>
+			<strong>Due Date: </strong><?= $task['due']; ?>
+		</li>
+
+		<li>
+			<strong>Person Responsible: </strong><?= $task['assigned_to']; ?>
+		</li>
+
+		<li>
+			<strong>Status: </strong>
+			<?php if(!$task['completed']) : ?>
+				<span>&#9989;</span>
+
+			<?php else : ?>
+				<span>&#10062;</span>
+
+			<?php endif; ?>
+		</li>
 	</ul>
 </body>
 </html>

@@ -1,4 +1,5 @@
 <?php
+require 'functions.php';
 // ARRAYS
 $animals = [
 	'Tiger',
@@ -34,12 +35,14 @@ unset($person['age']);
 
 $task = [
 	'title' => 'Make a cup of tea',
-	'due' => 5,
+	'due' => '5 mins',
 	'assigned_to' => 'Aimee',
-	'completed' => 'no'
+	'completed' => true
 ];
 
 
-// die(var_dump($person));
+// PHP FUNCTION
+dd($animals);
+oldEnough(20);
 
-require 'index.view.php';
+//require 'index.view.php';
