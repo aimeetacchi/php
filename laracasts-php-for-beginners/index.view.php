@@ -22,20 +22,15 @@
 		</h2>
 	</header>
 
-	<h2>Animals</h2>
+	<h2> ===== Animals ===== </h2>
 	<!-- Loop through ARRAY ANIMALS -->
 	<ul>
 		<?php foreach($animals as $animal) : ?>
 		<li><?= $animal; ?></li>
 		<?php endforeach; ?>
 
-		<!-- <?php
-		 foreach($names as $name) {
-			echo '<li>' . $name . '</li>' ;
-			} 
-		?> -->
 	</ul>
-	<h2>Person</h2>
+	<h2>==== Person ======</h2>
 	<!-- LOOP through Associative Array PERSON -->
 	<ul>
 		<?php foreach($person as $feature => $val) : ?>
@@ -43,7 +38,7 @@
 		<?php endforeach; ?>
 	</ul>
 
-	<h2>Task for the day</h2>
+	<h2> ====== Task for the day ====== </h2>
 	<!-- LOOP THROUGH Associative ARRAY TASK -->
 	<ul>
 		<li>
@@ -72,7 +67,7 @@
 
 
 <!-- OBJECT FROM THE INDEX.PHP FILE -->
-	<h2>Object Constructor</h2>
+	<h2> ===== Object Constructor ==== </h2>
 
 	<?php foreach ($tasks as $task) : ?>
 		<li>

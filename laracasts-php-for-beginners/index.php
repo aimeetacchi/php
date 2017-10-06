@@ -1,38 +1,11 @@
 <?php
 require 'functions.php';
+require 'Task.php';
 
-// Class Object constructor ===========
-class Task {
+$pdo = connectToDb();
+// LOCAL CONNECT TO DATABASE
 
-	public $description;
-	public $completed = false;
-
-	public function __construct($description) {
-		$this->description = $description;
-	}
-
-	// method to check if task is complete, will return true or false
-	public function isComplete() {
-		return $this->completed;
-	}
-
-	public function complete(){
-		$this->completed = true;
-	}
-}
-
-// Task Array which created Objects from the constructor function.
-$tasks = [
-	//input becomes description
-	new Task('Make Tea'),
-	new Task('Clean Car'),
-	new Task('Buy food')
-];
-
-$tasks[0]->complete();
-
-//dd($tasks);
-
+$tasks = fetchAllTasks($pdo);
 
 
 //==================================
@@ -80,6 +53,7 @@ $task = [
 
 // PHP FUNCTION
 //dd($animals);
-oldEnough(20);
+// oldEnough(20);
 
 require 'index.view.php';
+
