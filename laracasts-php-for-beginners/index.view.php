@@ -69,5 +69,22 @@
 			<?php endif; ?>
 		</li>
 	</ul>
+
+
+<!-- OBJECT FROM THE INDEX.PHP FILE -->
+	<h2>Object Constructor</h2>
+
+	<?php foreach ($tasks as $task) : ?>
+		<li>
+			<?php if($task->completed) : ?>
+				<strike><?= $task->description; ?></strike>
+			<?php else: ?>
+
+			<?= $task->description; ?>
+
+			<?php endif; ?>
+		</li>
+
+	<?php endforeach; ?>
 </body>
 </html>
